@@ -92,7 +92,6 @@ namespace OrderAPI.Controllers
         [Route("/deleteOrder/{id}")]
         public async Task<IResult> Delete(int id)
         {
-            //var order = await _context.Orders.FindAsync(id);
             var order = await _context.Orders.Include(order => order.OrderedDishes).ThenInclude(od => od.Dish).FirstOrDefaultAsync(o => o.Id == id);
 
             if (order == null)

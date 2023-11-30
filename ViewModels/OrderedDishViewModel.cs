@@ -11,7 +11,5 @@ namespace OrderAPI.ViewModels
 
         public DishModel Dish { get; set; }
         public int Quantity { get; set; }
-
-        //public int OrderId { get; set; }
     }
 }
